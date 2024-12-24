@@ -1,0 +1,438 @@
+/* color pallete */
+:root{
+  --deep-pink: #F0C3CE;
+  --light-pink: #F1D7E1;
+  --coral: #FAE2D4;
+  --sea-green: #EFF6F2;
+  --lavender: #E0DCF5;
+  --black: #000000;
+  --off-white: #F8F8F8;
+  --accent-color:	#455b55;
+}
+
+body {
+  margin: 0px;
+  padding-top: 60px;
+  background-color: var(--light-pink);
+  font-family: "Work Sans", sans-serif;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* NAV BAR CSS */
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  
+
+  /* Center and scale the image nicely */
+  background-image: url('/color_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: fixed;
+  top:0;
+  margin: 0;
+  padding: 0;
+}
+
+.links-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-link-home, .nav-link{
+  height: 100;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.nav-link:hover{
+  color: var(--accent-color);
+}
+
+#logo-img{
+  max-height: 20px;
+  margin-top: -6px;
+  padding: 0px;
+  margin-right: auto;
+}
+
+nav svg{
+  fill:var(--black);
+}
+
+.open-sidebar-button{
+  margin-left: auto;
+}
+
+#sidebar-active{
+  display:none;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+  display:none;
+}
+
+@media(max-width: 450px){
+
+  /*responsive nav bar for mobile & other devices*/
+  .links-container{
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: fixed;
+    top: 0;
+    right:-100%;
+    z-index:10;
+    width: 150px;
+
+
+    box-shadow: -5px 0 5px rgba(0,0,0,0.25);
+    transition: .75s ease-out;
+
+    /* Center and scale the image nicely */
+    background-image: url('/color_bg.png');
+    length: 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .nav-link{
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+  .open-sidebar-button, .close-sidebar-button{
+    display: block;
+    padding: 20px;
+  }
+  #sidebar-active:checked ~ .links-container{
+    right:0;
+  }
+  #sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  #contact-cards {
+    flex-direction: column;
+  }
+}
+
+
+/*SMILE PAGE CSS*/
+#smile-div:before{
+  content: "";
+  z-index:-1;
+  background-image: url('/color_bg.png');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: .75;
+}
+div.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+#logo-smile {
+  display: block;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 30%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#webcam-container button {
+  font-size: 30pt;
+  font-weight: 400;
+
+  background-color: var(--light-pink);
+  border: none;
+
+  width: 400px;
+  height: 400px;
+}
+
+#smile-button:hover {
+  background-color: var(--deep-pink);
+  cursor: pointer;
+}
+
+#skip-button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  font-weight: 300;
+}
+
+#webcam-container {
+  /* display: flex;
+  justify-content: center; */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bubble{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bubble h3 {
+  font-weight: 400;
+  font-size: 20pt;
+}
+
+#first-com, #sec-com{
+  visibility: hidden;
+}
+
+/* The labels (testing purposes)*/
+#label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 12pt;
+
+  margin: 25px;
+}
+
+/*HOME PAGE CSS*/
+#home-div div{
+  padding: 0;
+  margin: 0;
+}
+
+.home-div-link {
+  background-color: var(--off-white);
+  border-radius: 10px;
+  padding: 3px 7px;
+  margin: 0px;
+  color: var(--accent-color);
+}
+
+#home-div h3{
+  font-size: 60px;
+  padding: 30px 0;
+}
+
+#quote {
+  padding: 5vw;
+  max-width: 900px;
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+}
+
+#home-div p{
+  font-size: 25px;
+  padding: 0 50px;
+  font-weight: 300;
+}
+
+#home-container-one {
+  display:flex;
+  height: 100vh;
+  background-color: var(--deep-pink);
+}
+
+#home-container-one div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-container-two{
+  height: 100vh;
+  background-color: var(--coral);
+  display: flex;
+  justify-content: center;
+}
+
+#home-container-three{
+  height: 100vh;
+  background-color: var(--sea-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#healthy-strat-blurbs{
+  display: flex;
+}
+
+.strat-blurb-div{
+  display: flex;
+  flex-direction:column;
+}
+
+#home-container-four{
+  height: 100vh;
+  background-color: var(--lavender);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/*IMPACT PAGE CSS*/
+#impact-div {
+  background-color: var(--deep-pink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#impact-div h2{
+  font-size: 70px;
+  font-size: 6.7vw;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+#impact-div h3{
+  font-size: 30px;
+}
+
+#impact-div h6 {
+  font-weight: 400;
+  margin-top: 0px;
+  font-size: 14px;
+  padding: 0 3vw;
+}
+
+#impact-div p{
+  max-width: 650px;
+  padding: 0 5vw;
+}
+
+#impact-div small{
+  margin: 25px 0;
+}
+
+/* SOLUTIONS PAGE CSS */
+#solutions-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lavender);
+}
+
+#solutions-div h3{
+  font-size: 40px;
+}
+
+.card {
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--lavender);
+  box-shadow:  5px 10px 18px #888888;
+  max-width: 600px;
+  max-height: 240px;
+  margin: 2vw 5vw;
+  padding: 1vw;
+}
+
+#solutions-div h4{
+  padding-top: 3vh;
+}
+
+#solutions-div p{
+  padding: 0 7vh;
+}
+
+
+
+/*MYDAY PAGE CSS*/
+#myDay-div{
+  background-color: var(--sea-green);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myDay-div h4{
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.mood-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#journal {
+  height: 20vh;
+  width: 30vw;
+}
+
+/*CONTACT PAGE CSS*/
+#contact-div {
+  background-color: var(--coral);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-div h1{
+  font-size: 50px;
+}
+
+#contact-div img {
+  width: 300px;
+}
+
+#contact-para {
+  padding: 0 7vw;
+}
+
+#contact-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-card-div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.contact-card-div p{
+  max-width: 300px;
+}
